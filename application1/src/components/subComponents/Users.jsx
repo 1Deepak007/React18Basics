@@ -26,13 +26,15 @@ const Users = () => {
     // using ternary operator
     {
         return loading ?
-            (<h2 className='text-center'> <PropagateLoader/> </h2>)
+            (
+                <h2 className='text-center'> <PropagateLoader /> </h2>
+            )
             :
             (
                 userData.map((user) => {
                     return (
                         <>
-                            <div className="inline-flex bg-gray-200 p-4 m-1 rounded-md shadow-md">
+                            <div className="inline-flex bg-gray-200 p-4 m-1 rounded-md shadow-md" key={user.id}>
                                 <h2 className='text-md'>{user.name}</h2>
                                 <p className='text-md ms-5'>{user.email}</p>
                             </div>
@@ -74,7 +76,7 @@ const Users = () => {
     // }
 
 
-    
+
 }
 
 export default Users

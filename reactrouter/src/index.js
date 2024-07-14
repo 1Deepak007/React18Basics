@@ -3,18 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter} from 'react-router-dom';
-
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // strick mode help detecting errors/warnings in components i.e components is rendred 2 times
-  <React.StrictMode>  
+  <React.StrictMode>
     <BrowserRouter>
       <App />
-    </BrowserRouter>   
+    </BrowserRouter>
   </React.StrictMode>
 );
-
 
 reportWebVitals();

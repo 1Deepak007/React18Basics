@@ -58,9 +58,9 @@ const UseEffectHook = () => {
 
             <div className="flex">
                 {data.map((item, index) => {
-                    return <div className='bg-slate-400'>
-                        <p key={index}>{item.username},</p>
-                    </div>
+                    return <div className='bg-slate-400' key={index}>
+                                <p>{item.username},</p>
+                            </div>
                 })}
             </div>
 
@@ -71,7 +71,7 @@ const UseEffectHook = () => {
                 <button onClick={() => { setCount(count + 1) }} className='bg-green-400 rounded-xl p-2'>Increase Count</button>
             </div>
 
-            
+
         </>
     );
 };
