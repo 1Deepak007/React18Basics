@@ -5,6 +5,8 @@ const UseRefHook = () => {
   const refCount = useRef(0); // Initializes refCount with 0
 
   const btnRef = useRef(); // Initializes btnRef without a value, but it will be attached to a button
+  const paraRef = useRef();
+  const [isParagraphVisible, setIsParagraphVisible] = useState(true);
 
   useEffect(() => {
     console.log('Component re-rendered');
@@ -58,7 +60,22 @@ const UseRefHook = () => {
       <button ref={btnRef} className='border-teal-600 bg-orange-300 border-4 rounded-2xl p-1'>
         Ref Button
       </button>
-      <button onClick={() => { btnRef.current.style.display = 'none' }}>Hide Ref Button</button>
+      <button onClick={() => { btnRef.current.style.display = 'none' }} class='bg-slate-600 text-white p-2 rounded-lg'>Hide Ref Button</button>
+      
+      <p className='bg-blue-300' ref={paraRef}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, a enim. Eveniet, similique eligendi! Maiores molestias id voluptate cumque, iusto enim eos quidem laboriosam, beatae nobis eius sapiente quis dolores, quas officia. Maxime, a placeat quae ipsa accusantium sapiente iure autem saepe et iusto inventore laboriosam voluptates necessitatibus dicta ipsum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores culpa esse accusamus nam ducimus. Commodi voluptatum magni autem consequatur perferendis!</p>
+      <button 
+      onClick={() => {
+        setIsParagraphVisible(!isParagraphVisible);
+        if (isParagraphVisible === true) {
+          paraRef.current.style.display = 'none';
+        } else {
+          paraRef.current.style.display = 'block';
+        }
+      }} 
+      className='p-3 rounded-xl bg-pink-500'
+      >
+        {isParagraphVisible ? 'Hide Paragraph' : 'Show Paragraph'}
+      </button>
     </div>
   );
 };
