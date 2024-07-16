@@ -8,6 +8,7 @@ import UseEffectHook from './components/UseEffectHook';
 import ConditionalRendering from './components/ConditionalRendering';
 import UseRefHook from './components/UseRefHook';
 import UseReducerHook from './components/UseReducerHook';
+import UseMemoHook from './components/UseMemoHook';
 
 
 
@@ -26,6 +27,7 @@ function App() {
       <ConditionalRendering/>
       <UseRefHook />
       <UseReducerHook />
+      <UseMemoHook />
     </>
   );
 }
